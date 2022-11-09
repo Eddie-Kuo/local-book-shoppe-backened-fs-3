@@ -18,8 +18,8 @@ describe('book routes', () => {
     });
   });
   test('/books/:id returns a book with author details', async () => {
-    const res = await request(app).get('/books/:id');
-    expect(res.body[0]).toEqual({
+    const res = await request(app).get('/books/1');
+    expect(res.body).toEqual({
       id: expect.any(String),
       title: expect.any(String),
       released_year: expect.any(Number),
