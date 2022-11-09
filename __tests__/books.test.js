@@ -10,7 +10,7 @@ describe('book routes', () => {
   //test 1 should return a list of books and their properties tohaveproperty?
   test('/books returns a list of books', async () => {
     const res = await request(app).get('/books');
-    // expect(res.body.length).toEqual(10);
+    expect(res.body.length).toEqual(10);
     expect(res.body[0]).toEqual({
       id: expect.any(String),
       title: expect.any(String),
