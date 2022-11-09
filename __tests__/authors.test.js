@@ -18,6 +18,16 @@ describe('author routes', () => {
       pob: expect.any(String),
     });
   });
+  test('/authors/:id', async () => {
+    const res = await request(app).get('/authors/1');
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      name: expect.any(String),
+      dob: expect.any(Number),
+      pob: expect.any(String),
+      books: expect.any(Array),
+    });
+  });
   afterAll(() => {
     pool.end;
   });
